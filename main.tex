@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{How to Make SSH Keys}
+\author{Charlie Jung}
+\date{January 16, 2019}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction to SSH Keys}
+
+\textbf{On Host Machine:}
+\\
+1) Run 
+\\
+\begin{verbatim}
+    ssh-keygen -t rsa -b 4096
+\end{verbatim}
+Hit enter twice.
+\\
+Now, copy id\_rsa.pub into ~/.ssh (remote machine)
+\bigskip
+\\
+\textbf{On Remote Machine:}
+\\
+copy id\_rsa.pub into ~/.ssh/authorized\_keys
+\\
+Enter the following commands:
+\begin{verbatim}
+    chmod 700 ~/.ssh
+    chmod 600 ~/.ssh/*
+\end{verbatim}
+
+--End--
+
+
+
+\end{document}
+
